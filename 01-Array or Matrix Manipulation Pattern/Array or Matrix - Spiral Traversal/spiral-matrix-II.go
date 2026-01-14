@@ -16,21 +16,21 @@ func generateMatrix(n int) [][]int {
 	for num <= max {
 
 		// left to right (top row)
-		for col := left; col <= right; col++ {
+		for col := left; col <= right && num <= max; col++ {
 			matrix[top][col] = num
 			num++
 		}
 		top++
 
 		// top to bottom (right column)
-		for row := top; row <= bottom; row++ {
+		for row := top; row <= bottom && num <= max; row++ {
 			matrix[row][right] = num
 			num++
 		}
 		right--
 
 		// right to left (bottom row)
-		for col := right; col >= left; col-- {
+		for col := right; col >= left && num <= max; col-- {
 			matrix[bottom][col] = num
 			num++
 		}
